@@ -1,9 +1,33 @@
 var mongoose = require("mongoose");
 var Major = require("../models/major");
 
-// module.exports.signup = function (req, res) {
-// 	var user = new User(req.body);
-// 	user.save();
+module.exports.findAllMajors = function (req, res) {
+	Major.find(function(err, major){
+		if (err) {
+			res.send(err);
+		} else {
+			res.json(major);
+		}
+	});
+}
 
-// 	res.json(req.body);
-// }
+module.exports.findByMajor = function (req, res) {
+	Major.find({
+		name: req.params.major_name
+	}, function(err, major) {
+		res.json(major);
+	});
+}
+
+module.exports.createMajor = function (req, res) {
+	Major.create({
+		name 		:req.body.name,
+		classes 	:[req.body.classes]
+	}, function(err, major) {
+		if (err) {
+			res.send(err);
+		} else {
+			res.json(req.body);
+		}
+	});	
+}
