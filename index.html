@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="prereqsmap">
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="app/css/style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div>
+					<input type="text" ng-model="login.email">
+					<input type="password" ng-model="login.password">
+					<button>Login</button>
+					<a ui-sref="signUp">Sign Up</a>
+				</div>
+			</div>
+		</nav>
+		<div ui-view class="main"></div>
+	</body>
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/home/home.controller.js"></script>
+	<script src="app/signup/signup.controller.js"></script>
+</html>
