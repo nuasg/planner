@@ -21,6 +21,9 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<ul class="nav navbar-nav">
+			    	<li><a ui-sref="major">Manage Major</a></li>
+		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		      	<form class="navbar-form navbar-left" role="search">
 			        <div class="form-group">
@@ -38,7 +41,11 @@
 	</body>
 	<script src="node_modules/angular/angular.js"></script>
 	<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="node_modules/angular-cookies/angular-cookies.js"></script>
 	<script src="app/app.js"></script>
+	<script src="app/factories/dataFactory.js"></script>
 	<script src="app/home/home.controller.js"></script>
 	<script src="app/signup/signup.controller.js"></script>
+	<script src="app/major/major.controller.js"></script>
+	<script src="app/graph/graph.controller.js"></script>
 </html>

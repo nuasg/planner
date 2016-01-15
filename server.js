@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var authenticationController = require("./server/controller/authentication.controller");
 var majorController = require("./server/controller/major.controller");
+var schoolController = require("./server/controller/school.controller");
 
 mongoose.connect("mongodb://node:node@ds053784.mongolab.com:53784/prereqsmap");
 
@@ -26,6 +27,9 @@ app.post("/api/user/signup", authenticationController.signup);
 app.get("/api/major", majorController.findAllMajors);
 app.get("/api/major/:major_name", majorController.findByMajor);
 app.post("/api/major", majorController.createMajor);
+
+//School
+app.get("/api/school/:school_name", schoolController.findBySchool);
 
 app.listen('3000', function(){
 	console.log("Listening on port 3000...");
