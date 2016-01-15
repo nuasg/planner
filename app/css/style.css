@@ -1,3 +1,9 @@
-.main{
-	margin-top: 49px;
+.main {
+	height: calc(100% - 72px);
+}
+html, body, .major, .major .col-md-4 {
+	height: 100%;
+}
+.major .panel {
+	height: 90%;
 }

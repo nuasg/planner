@@ -1,0 +1,73 @@
+<div class="major">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Add Majors</div>
+		  <div class="panel-body">
+		    <div class="panel-body">
+			    <div class="form-group">
+		        <label>Name of Major</label>
+		        <input class="form-control" ng-model="major">
+		      </div>
+		      <div class="form-group">
+		      	<label>Classes</label>
+		      	<h5>Please make sure to separate classes by only a comma and separate class numbers by an underscore.<br/><br/>e.g. EECS_101,EECS_111,EECS_211</h5>
+		      	<textarea class="form-control" ng-model="classes"></textarea>
+		      </div>
+		      <button class="btn btn-default full-width" ng-click="addMajor(major, classes)">Submit</button>
+			  </div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Pair Majors to School</div>
+		  
+
+		  <!-- List group -->
+		  <ul class="list-group">
+		    <li class="list-group-item">Cras justo odio</li>
+		    <li class="list-group-item">Dapibus ac facilisis in</li>
+		    <li class="list-group-item">Morbi leo risus</li>
+		    <li class="list-group-item">Porta ac consectetur ac</li>
+		    <li class="list-group-item">Vestibulum at eros</li>
+		  </ul>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Edit Majors</div>
+		  <div class="panel-body">
+		    <p>...</p>
+		  </div>
+
+		  <!-- List group -->
+		  <ul class="list-group">
+		    <li class="list-group-item">Cras justo odio</li>
+		    <li class="list-group-item">Dapibus ac facilisis in</li>
+		    <li class="list-group-item">Morbi leo risus</li>
+		    <li class="list-group-item">Porta ac consectetur ac</li>
+		    <li class="list-group-item">Vestibulum at eros</li>
+		  </ul>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="classes">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{major}}</h4>
+      </div>
+      <div class="modal-body">
+      	<ul>
+      		<li ng-repeat="class in listOfClasses">{{class}}</li>
+      	</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

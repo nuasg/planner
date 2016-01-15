@@ -24,7 +24,7 @@
 		    	<ul class="nav navbar-nav">
 			    	<li><a ui-sref="major">Manage Major</a></li>
 		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
+		      <!-- <ul class="nav navbar-nav navbar-right">
 		      	<form class="navbar-form navbar-left" role="search">
 			        <div class="form-group">
 			          <input type="text" placeholder="Email" ng-model="login.email">
@@ -33,12 +33,14 @@
 			        <button type="submit" class="btn btn-default">Submit</button>
 			      </form>
 			      <li><a ui-sref="signUp">Sign Up</a></li>
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
+		      </ul> -->
+		    </div>
 		  </div><!-- /.container-fluid -->
 		</nav>
 		<div ui-view class="main"></div>
 	</body>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
 	<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="node_modules/angular-cookies/angular-cookies.js"></script>

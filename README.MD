@@ -1,4 +1,12 @@
 # Setup Task
-Install dependencies using npm install
+Install dependencies for Project
 
-Run local environment using node server.js
+'''
+npm install
+'''
+
+Run local environment 
+
+'''
+node server.js
+'''
