@@ -7,3 +7,11 @@ html, body, .major, .major .col-md-4 {
 .major .panel {
 	height: 90%;
 }
+.school {
+	background: #dff0d8;
+	cursor: pointer;
+}
+.delete {
+	cursor: pointer;
+	float: right;
+}
