@@ -31,7 +31,7 @@ app.post("/api/major", majorController.createMajor);
 //School
 app.get("/api/school", schoolController.findSchools);
 app.get("/api/school/:school_name", schoolController.findBySchool);
-app.put("/api/school/:school_name", schoolController.updateSchool);
+// app.put("/api/school/:school_name", schoolController.updateSchool);
 
 app.listen('3000', function(){
 	console.log("Listening on port 3000...");

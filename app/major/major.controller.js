@@ -4,7 +4,6 @@
 		$http.get("/api/school").success(function(data){
 			$scope.schools = data;
 		})
-
 		$scope.addMajor = function (major, classes) {
 			if (classes == undefined || major == undefined) {
 				alert("Fill out form completely");
@@ -12,6 +11,15 @@
 				$scope.major = major;
 				$scope.listOfClasses = classes.split(",");
 				$('#classes').modal('show');
+				var data = {
+					name: $scope.major, 
+					classes: $scope.listOfClasses
+				};
+				$http.post("api/major", data).success(function(response){
+
+				}).error(function(error){
+					console.log(error);
+				});
 			}
 		}
 		$scope.deleteConfirmation = function(school, major){
