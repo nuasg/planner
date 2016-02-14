@@ -6,7 +6,7 @@
 		});
 		getMajors();
 		$scope.addMajor = function (major, classes) {
-			if (classes == undefined && major == undefined) {
+			if (classes == undefined || major == undefined) {
 				alert("Fill out form completely");
 			} else {
 				$scope.major = major;

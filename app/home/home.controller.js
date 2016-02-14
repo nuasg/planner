@@ -6,13 +6,23 @@
 				$scope.majors = data[0].majors;
 			});
 		}
-		$scope.selectMajor = function(school,major){
-			DataFactory.query = {
-				school: school,
-				major: major
-			}
-			$cookies.putObject("query",DataFactory.query);
-			$state.go("graph");
+		// $scope.selectMajor = function(school,major){
+		// 	DataFactory.query = {
+		// 		school: school,
+		// 		major: major
+		// 	}
+		// 	$cookies.putObject("query",DataFactory.query);
+		// 	$state.go("graph");
+		// }
+		$scope.selectMajor = function (major) {
+			var re = new RegExp(major.toLowerCase() + ".+");
+			$scope.searchMajor = [];
+			$scope.majors.forEach(function(ma){
+				var result = ma.toLowerCase().match(re);
+				if (result) {
+					$scope.searchMajor.push(ma);
+				}
+			})
 		}
 	}]);
 }());
