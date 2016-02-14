@@ -10,9 +10,10 @@
 			</div>
       <div class="form-group">
         <label>Major</label>
-        <select class="form-control" ng-model="selectedMajor" ng-disabled="!majors">
-          <option ng-repeat="major in majors | orderBy:major">{{major}}</option>
-        </select>
+        <input list="classes" class="form-control" ng-model="selectedMajor" ng-disabled="!majors">
+          <datalist id="classes">
+            <option ng-repeat="major in majors | orderBy:major">{{major}}</option>
+          </datalist>
       </div>
       <button type="submit" ng-click="selectMajor(school, selectedMajor)" class="btn btn-default full-width">Go!</button>
     </form>
