@@ -10,26 +10,10 @@
 			</div>
       <div class="form-group">
         <label>Major</label>
-        <!-- <select class="form-control" ng-model="selectedMajor" ng-disabled="!majors">
-          <option ng-repeat="major in majors | orderBy:major">{{major}}</option>
-        </select> -->
-        <input type="text" class="form-control" ng-change="selectMajor(selectedMajor)" ng-model="selectedMajor" ng-disabled="!majors">
-        <!-- <div ng-show="results">
-          <ul class="media-list">
-            <li class="media"
-                ng-repeat="result in results" 
-                ng-class="{hover:hovering}" 
-                ng-mouseenter="hovering=true" 
-                ng-mouseleave="hovering=false"
-                ng-click="clickProfile(result)">
-              <div class="media-left"><img class="media-object" ng-src="{{result.profile_image_url}}"></div>
-              <div class="media-body">
-                <h4 class="media-heading">@{{result.screen_name}}</h4>
-                {{result.name}}
-              </div>
-            </li>
-          </ul>
-        </div> -->
+        <input list="classes" class="form-control" ng-model="selectedMajor" ng-disabled="!majors">
+          <datalist id="classes">
+            <option ng-repeat="major in majors | orderBy:major">{{major}}</option>
+          </datalist>
       </div>
       <button type="submit" ng-click="selectMajor(school, selectedMajor)" class="btn btn-default full-width">Go!</button>
     </form>
