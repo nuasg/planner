@@ -21,13 +21,13 @@ module.exports.findByMajor = function (req, res) {
 
 module.exports.createMajor = function (req, res) {
 	Major.create({
-		name 		:req.body.name,
+		name 			:req.body.name,
 		classes 	:[req.body.classes]
 	}, function(err, major) {
 		if (err) {
 			res.send(err);
 		} else {
-			res.json(req.body);
+			res.json({"response": true});
 		}
 	});	
 }

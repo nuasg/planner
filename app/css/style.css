@@ -7,3 +7,28 @@ html, body, .major, .major .col-md-4 {
 .major .panel {
 	height: 90%;
 }
+.school {
+	background: #dff0d8;
+	cursor: pointer;
+}
+.delete {
+	cursor: pointer;
+	float: right;
+}
+.major .panel.panelOfMajors {
+	height: 40%;
+	overflow: auto;
+}
+.major .panel.panelOfSchools {
+	height: 40%;
+	overflow: auto;
+}
+.major .panel.panelOfSchools .list-group-item,  .major .panel.panelOfMajors .list-group-item {
+	cursor: pointer;
+}
+.major .btn.addButton {
+	width: 100%;
+}
+.major .selected {
+	background: #dff0d8;
+}
