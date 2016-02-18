@@ -32,3 +32,17 @@ html, body, .major, .major .col-md-4 {
 .major .selected {
 	background: #dff0d8;
 }
+
+.sidebar {
+	float: left;
+	background: yellow;
+	width: 30%;
+	height: 100%;
+}
+
+.graph {
+	float: left;
+	background: red;
+	width: 70%;
+	height: 100%;
+}

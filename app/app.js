@@ -18,10 +18,24 @@
 					templateUrl: "app/major/major.html",
 					controller: "MajorController"
 				})
-				.state("graph", {
-					url: "/graph",
-					templateUrl: "app/graph/graph.html",
-					controller: "GraphController"
-				});
+				.state("classpage", {
+					url: "/classpage",
+					views: {
+						"": {
+							url: "/classpage",
+							templateUrl: "app/classpage/classpage.html",
+							controller: "ClassPageController"
+						},
+						"sidebar@classpage": {
+							templateUrl: "app/sidebar/sidebar.html",
+							controller: "SidebarController"
+						},
+						"graph@classpage": {
+							templateUrl: "app/graph/graph.html",
+							controller: "GraphController"
+						}
+					}
+					
+				})
 		})
 }());

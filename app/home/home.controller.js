@@ -12,7 +12,7 @@
 				major: major
 			}
 			$cookies.putObject("query",DataFactory.query);
-			$state.go("graph");
+			$state.go("classpage");
 		}
 	}]);
 }());
