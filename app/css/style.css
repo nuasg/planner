@@ -1,8 +1,14 @@
 .main {
-	height: calc(100% - 72px);
+	height: calc(100% - 52px);
+}
+.navbar {
+	margin: 0px;
 }
 html, body, .major, .major .col-md-4 {
 	height: 100%;
+}
+.major {
+	padding-top: 20px;
 }
 .major .panel {
 	height: 90%;
@@ -32,14 +38,13 @@ html, body, .major, .major .col-md-4 {
 .major .selected {
 	background: #dff0d8;
 }
-
+/* Profile */
 .sidebar {
 	float: left;
 	background: yellow;
 	width: 30%;
 	height: 100%;
 }
-
 .graph {
 	float: left;
 	background: red;

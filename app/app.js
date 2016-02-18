@@ -18,20 +18,20 @@
 					templateUrl: "app/major/major.html",
 					controller: "MajorController"
 				})
-				.state("classpage", {
-					url: "/classpage",
+				.state("profile", {
+					url: "/profile",
 					views: {
 						"": {
-							url: "/classpage",
-							templateUrl: "app/classpage/classpage.html",
-							controller: "ClassPageController"
+							url: "/profile",
+							templateUrl: "app/profile/profile.html",
+							controller: "ProfileController"
 						},
-						"sidebar@classpage": {
-							templateUrl: "app/sidebar/sidebar.html",
+						"sidebar@profile": {
+							templateUrl: "app/profile/sidebar.html",
 							controller: "SidebarController"
 						},
-						"graph@classpage": {
-							templateUrl: "app/graph/graph.html",
+						"graph@profile": {
+							templateUrl: "app/profile/graph.html",
 							controller: "GraphController"
 						}
 					}
