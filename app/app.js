@@ -18,24 +18,29 @@
 					templateUrl: "app/major/major.html",
 					controller: "MajorController"
 				})
-				.state("profile", {
-					url: "/profile",
-					views: {
-						"": {
-							url: "/profile",
-							templateUrl: "app/profile/profile.html",
-							controller: "ProfileController"
-						},
-						"sidebar@profile": {
-							templateUrl: "app/profile/sidebar.html",
-							controller: "SidebarController"
-						},
-						"graph@profile": {
-							templateUrl: "app/profile/graph.html",
-							controller: "GraphController"
-						}
-					}
-					
+				.state("graph", {
+					url: "/graph", 
+					templateUrl: "app/graph/graph.html",
+					controller: "GraphController"
 				})
+				// .state("profile", {
+				// 	url: "/profile",
+				// 	views: {
+				// 		"": {
+				// 			url: "/profile",
+				// 			templateUrl: "app/profile/profile.html",
+				// 			controller: "ProfileController"
+				// 		},
+				// 		"sidebar@profile": {
+				// 			templateUrl: "app/profile/sidebar.html",
+				// 			controller: "SidebarController"
+				// 		},
+				// 		"graph@profile": {
+				// 			templateUrl: "app/profile/graph.html",
+				// 			controller: "GraphController"
+				// 		}
+				// 	}
+					
+				// })
 		})
 }());

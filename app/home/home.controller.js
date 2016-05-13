@@ -29,7 +29,7 @@
 				major: major
 			}
 			$cookies.putObject("query",DataFactory.query);
-			$state.go("profile");
+			$state.go("graph");
 		}
 	}]);
 }());
