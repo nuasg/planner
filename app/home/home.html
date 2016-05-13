@@ -1,17 +1,17 @@
-<div class="container">
+<div class="container" ng-init="loadSchools()">
   <div class="login-panel col-md-4 col-md-offset-4">
     <h2>Class Planner</h2>
     <form>
 			<div class="form-group">
 			  <label>School</label>
 			  <select class="form-control" ng-model="school" ng-change="selectSchool(school)">
-			    <option>McCormick School of Engineering</option>
+			    <option ng-repeat="sch in schools">{{sch}}</option>
 			  </select>
 			</div>
       <div class="form-group">
         <label>Major</label>
         <input list="classes" class="form-control" ng-model="selectedMajor" ng-disabled="!majors">
-          <datalist id="classes">
+          <datalist id="classes" style="overflow-y: hidden; overflow: scroll; width: 100%; height:500px">
             <option ng-repeat="major in majors | orderBy:major">{{major}}</option>
           </datalist>
       </div>

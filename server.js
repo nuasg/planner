@@ -15,11 +15,15 @@ app.use(bodyParser.urlencoded({
 }));
 app.use('/app',express.static(__dirname + "/app"));
 app.use('/node_modules',express.static(__dirname + "/node_modules"));
-
+app.get('/graph.json', function(req,res){
+	res.sendFile(__dirname + "/app/profile/graph.json");
+});
 app.get('/', function(req,res){
 	res.sendFile(__dirname + "/index.html");
 });
-
+app.get('/majors.json',function(req,res){
+	res.sendFile(__dirname + "/server/majors.json");
+})
 // Authentication
 app.post("/api/user/signup", authenticationController.signup);
 

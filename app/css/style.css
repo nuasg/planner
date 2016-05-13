@@ -47,7 +47,7 @@ html, body, .major, .major .col-md-4 {
 }
 .graph {
 	float: left;
-	background: red;
+	/*border-color: red;*/
 	width: 70%;
 	height: 100%;
 }
