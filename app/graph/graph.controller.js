@@ -80,5 +80,17 @@
 		if (!$scope.query) {
 			$state.go("home");
 		}
+		// function create_nodes (graph_data) {
+		// 	nodes = [];
+		// 	edges = [];
+		// 	array = keys(graph_data);
+		// 	for (var i=0; i<array.length; i++) {
+		// 		values = array[i].requirements;
+		// 		if (values) {
+		// 			values
+		// 		}
+		// 	}
+		// }
 	}]);
 }());
+
