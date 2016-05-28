@@ -2,9 +2,10 @@
 	angular.module("prereqsmap")
 	.controller("GraphController",["$scope", "$state", "$http", "$cookies", "DataFactory", function($scope, $state, $http, $cookies, DataFactory){		
 		$scope.init = function () {
-			var a = [["EECS 214"],["EECS 213",["EECS 230","EECS 211"]]];
-			var elements = create_node_helper(a,[],[],"EECS 340",0,0);
-			elements.nodes.push({data:{id:"EECS 340"}});
+			// var a = [["EECS 214"],["EECS 213",["EECS 230","EECS 211"]]];
+			// var elements = create_node_helper(a,[],[],"EECS 340",0,0);
+			// elements.nodes.push({data:{id:"EECS 340"}});
+			var elements = create_nodes(graph_data);
 			// var elements = {
 			// 		nodes: [
 			// 			{ data: { id: 'n0' } },
@@ -44,13 +45,13 @@
 			var cy = window.cy = cytoscape({
 				container: document.getElementById('cy'),
 				// initial position
-				pan: { x: 75, y: 50 },
+				pan: { x: -1000, y: 50 },
 				// settings
-		        boxSelectionEnabled: false,
-		        panningEnabled: false,
-		        autounselectify: true,
-		        zoomingEnabled: false,
-		        userZoomingEnabled: false,
+        boxSelectionEnabled: false,
+        panningEnabled: true,
+        autounselectify: true,
+        zoomingEnabled: true,
+        userZoomingEnabled: true,
 				layout: {
 					name: 'dagre'
 				},
@@ -75,6 +76,8 @@
 						}
 					}
 				],
+				zoom: .5,
+				autolock: false,
 				elements: elements,
 			});
 			
@@ -85,26 +88,6 @@
 		}
 		var graph_data =
 		{
-	  "EECS 473-2": {
-	    "requirements": null,
-	    "title": "NUvention: Web - Part 2"
-	  },
-	  "EECS 473-1": {
-	    "requirements": null,
-	    "title": "NUvention: Web - Part 1"
-	  },
-	  "EECS 512-1": {
-	    "requirements": null,
-	    "title": "Graduate Research Seminar"
-	  },
-	  "EECS 512-3": {
-	    "requirements": null,
-	    "title": "Graduate Research Seminar"
-	  },
-	  "EECS 512-2": {
-	    "requirements": null,
-	    "title": "Graduate Research Seminar in EECS"
-	  },
 	  "EECS 360-0": {
 	    "requirements": null,
 	    "title": "Introduction to Feedback Systems"
@@ -116,10 +99,6 @@
 	  "EECS 348-0": {
 	    "requirements": [["EECS 111-0"]],
 	    "title": "Introduction to Artificial Intelligence"
-	  },
-	  "EECS 401-0": {
-	    "requirements": null,
-	    "title": "Fundamentals of Electronic Devices"
 	  },
 	  "EECS 363-0": {
 	    "requirements": null,
@@ -149,17 +128,9 @@
 	    "requirements": null,
 	    "title": "Fiber-Optic Communications"
 	  },
-	  "EECS 418-0": {
-	    "requirements": null,
-	    "title": "Advanced Digital Signal Processing"
-	  },
 	  "EECS 357-0": {
 	    "requirements": null,
 	    "title": "Design Automation in VLSI"
-	  },
-	  "EECS 452-0": {
-	    "requirements": null,
-	    "title": "Adv Computer Architecture"
 	  },
 	  "EECS 340-0": {
 	    "requirements": [["EECS 214-0"],["EECS 213-0",["EECS 230-0", "EECS 211-0"]]],
@@ -189,10 +160,6 @@
 	    "requirements": null,
 	    "title": "An Introduction to Computer Science for Everyone"
 	  },
-	  "EECS 459-0": {
-	    "requirements": null,
-	    "title": "VLSI Algorythmics"
-	  },
 	  "EECS 379-0": {
 	    "requirements": null,
 	    "title": "Lasers and Coherent Optics"
@@ -205,10 +172,6 @@
 	    "requirements": [["EECS 211-0"]],
 	    "title": "Human Computer Interaction"
 	  },
-	  "EECS 431-0": {
-	    "requirements": null,
-	    "title": "Human Perception and Electronic Media"
-	  },
 	  "EECS 372-0": {
 	    "requirements": null,
 	    "title": "Designing & Constructing Models with Multi-Agent Language"
@@ -216,10 +179,6 @@
 	  "EECS 362-0": {
 	    "requirements": null,
 	    "title": "Computer Architecture Projects"
-	  },
-	  "EECS 427-0": {
-	    "requirements": null,
-	    "title": "Optical Communications"
 	  },
 	  "EECS 337-0": {
 	    "requirements": null,
@@ -241,29 +200,9 @@
 	    "requirements": null,
 	    "title": "Electrical Engineering Design"
 	  },
-	  "EECS 403-0": {
-	    "requirements": null,
-	    "title": "Quantum Semiconductors"
-	  },
-	  "EECS 409-0": {
-	    "requirements": null,
-	    "title": "Semiconductor Lasers"
-	  },
-	  "EECS 404-0": {
-	    "requirements": null,
-	    "title": "Quantum Electronics"
-	  },
-	  "EECS 510-0": {
-	    "requirements": null,
-	    "title": "Seminar"
-	  },
 	  "EECS 395-0": {
 	    "requirements": null,
 	    "title": "Special Topics in Electrical Engineering and Computer Science"
-	  },
-	  "EECS 435-0": {
-	    "requirements": null,
-	    "title": "Neural Networks"
 	  },
 	  "EECS 371-0": {
 	    "requirements": [["EECS 348-0","EECS 325-0"]],
@@ -288,14 +227,6 @@
 	  "EECS 391-0": {
 	    "requirements": null,
 	    "title": "VLSI Systems Design"
-	  },
-	  "EECS 410-0": {
-	    "requirements": null,
-	    "title": "System Theory"
-	  },
-	  "EECS 440-0": {
-	    "requirements": null,
-	    "title": "Advanced Networking"
 	  },
 	  "EECS 388-0": {
 	    "requirements": null,
@@ -325,10 +256,6 @@
 	    "requirements": null,
 	    "title": "VLSI Systems Design Projects"
 	  },
-	  "EECS 406-0": {
-	    "requirements": null,
-	    "title": "Nonlinear Optics"
-	  },
 	  "EECS 382-0": {
 	    "requirements": null,
 	    "title": "Photonic Information Processing"
@@ -336,18 +263,6 @@
 	  "EECS 369-0": {
 	    "Requirements": [["EECS 343-0","EECS 340-0"]],
 	    "title": "Introduction to Sensor Networks"
-	  },
-	  "EECS 422-0": {
-	    "requirements": null,
-	    "title": "Random Processes in Communications and Control 1"
-	  },
-	  "EECS 454-0": {
-	    "requirements": null,
-	    "title": "Advanced Communication Networks"
-	  },
-	  "EECS 453-0": {
-	    "requirements": null,
-	    "title": "Parallel Architectures"
 	  },
 	  "EECS 223-0": {
 	    "requirements": null,
@@ -413,14 +328,6 @@
 	    "requirements": null,
 	    "title": "Introduction to Computer Vision"
 	  },
-	  "EECS 433-0": {
-	    "requirements": null,
-	    "title": "Statistical Pattern Recognition"
-	  },
-	  "EECS 546-0": {
-	    "requirements": null,
-	    "title": "Teaching Experience II"
-	  },
 	  "EECS 349-0": {
 	    "requirements": [["EECS 214-0"],["EECS 325-1"]],
 	    "title": "Machine Learning"
@@ -432,18 +339,6 @@
 	  "EECS 336-0": {
 	    "requirements": null,
 	    "title": "Design & Analysis of Algorithms"
-	  },
-	  "EECS 426-0": {
-	    "requirements": null,
-	    "title": "Signal Detection and Estimation"
-	  },
-	  "EECS 420-0": {
-	    "requirements": null,
-	    "title": "Digital Image Processing"
-	  },
-	  "EECS 405-0": {
-	    "requirements": null,
-	    "title": "Advanced Photonics"
 	  },
 	  "EECS 205-0": {
 	    "requirements": null,
@@ -461,10 +356,6 @@
 	    "requirements": [["EECS 111-0","EECS 110-0"],["MATH 230-0"]],
 	    "title": "Mathematical Foundations of Comp Science"
 	  },
-	  "EECS 468-0": {
-	    "requirements": null,
-	    "title": "Programming Massively Parallel Processors with CUDA"
-	  },
 	  "EECS 321-0": {
 	    "requirements": [["EECS 211-0"],["EECS 214-0"]],
 	    "title": "Programming Languages"
@@ -480,10 +371,6 @@
 	  "EECS 374-0": {
 	    "requirements": null,
 	    "title": "Introduction to Digital Control"
-	  },
-	  "EECS 545-0": {
-	    "requirements": null,
-	    "title": "Teaching Experience I"
 	  }}
 		function create_nodes (graph_data) {
 			var nodes = [];
@@ -496,12 +383,15 @@
 				if (nodes.indexOf(cname) == -1){
 					nodes.push({ data: { id: cname } });
 				}
-				// 
 				var values = graph_data[cname].requirements;
 				if (values) {
-
+					returned = create_node_helper(values,nodes,edges,cname,num_ors,0);
+					nodes = returned.nodes;
+					edges = returned.edges;
+					num_ors = Math.max(returned.temp,num_ors);
 				}
 			}
+			return {"nodes": nodes, "edges": edges};
 		}
 		
 		function create_node_helper(array,nodes,edges,parent,numOrs,temp) {
